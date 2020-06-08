@@ -10,10 +10,11 @@ exports.createPost =  (req, res, next) => {
     author: req.authData.userId
   });
   post.save().then((createdPost) => {
+    console.log(createdPost);
     res.status(201).send({
       message: 'Post Added Successfully',
       post: {
-        ...createdPost,
+        imagePath: createdPost.imagePath,
         id: createdPost._id
       },
       author: createdPost.author
