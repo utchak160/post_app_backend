@@ -14,8 +14,7 @@ exports.createPost =  (req, res, next) => {
     res.status(201).send({
       message: 'Post Added Successfully',
       post: {
-        // imagePath: createdPost.imagePath,
-        ...createdPost,
+        imagePath: createdPost.imagePath,
         id: createdPost._id
       },
       author: createdPost.author
